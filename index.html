@@ -1,612 +1,302 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#075bff">
+<title>Blizzy Digitals | Digital Solutions</title>
+<meta name="description" content="Blizzy Digitals provides web development, domain services, professional business email, graphic design and logo design.">
 
-  <title>Blizzy Digitals | Digital Solutions</title>
-
-  <meta name="description" content="Blizzy Digitals provides professional web development, domain services, company email setup, graphic design, logo design and digital support.">
-
-  <link rel="stylesheet" href="style.css">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#172b49;line-height:1.7}
+a{text-decoration:none}
+.container{width:min(1120px,90%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e4edfa}
+nav{min-height:75px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{color:#092754;font-size:21px;font-weight:800}
+.logo span{color:#075bff}
+.nav-links{display:flex;gap:22px;list-style:none;padding:0;margin:0}
+.nav-links a{color:#263c59;font-size:13px;font-weight:bold}
+.nav-links a:hover{color:#075bff}
+.menu-btn{display:none;border:0;background:#edf4ff;padding:8px 12px;font-size:22px;border-radius:8px}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;background:#075bff;color:white;font-weight:bold;font-size:13px;margin:5px 6px 5px 0}
+.btn:hover{background:#0649ca}
+.btn.light{background:white;border:1px solid #b8cefa;color:#075bff}
+.hero{background:linear-gradient(120deg,#edf6ff,#fff 60%,#e2efff);padding:75px 0}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px}
+.eyebrow,.kicker{color:#075bff;font-size:12px;font-weight:bold;letter-spacing:1px}
+h1,h2,h3{line-height:1.25}
+h1{color:#092754;font-size:clamp(36px,5vw,55px);margin:15px 0;letter-spacing:-1.5px}
+h1 span{color:#075bff}
+.hero p,.intro{color:#60718a}
+.hero-art{background:linear-gradient(145deg,#075bff,#092754);color:white;padding:40px 28px;border-radius:22px;min-height:280px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 20px 45px #075bff25}
+.hero-art .big-b{font-size:76px;font-weight:900;color:#79d9ff}
+.hero-art h2{font-size:28px;margin:0}
+.hero-art p{color:#d9eaff}
+section{padding:75px 0}
+.section-heading{text-align:center;max-width:650px;margin:0 auto 35px}
+.section-heading h2,.about h2,.contact h2{font-size:clamp(27px,4vw,37px);color:#092754;margin:8px 0}
+.section-heading p{color:#60718a}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service-card{padding:25px;border:1px solid #e2ebf7;border-radius:15px;background:white;box-shadow:0 8px 25px #153c7008}
+.service-icon{width:44px;height:44px;display:grid;place-items:center;background:#eaf2ff;color:#075bff;border-radius:12px;font-size:21px;font-weight:bold}
+.service-card h3{color:#092754;margin-bottom:8px}
+.service-card p{font-size:14px;color:#60718a}
+.service-card a{color:#075bff;font-size:13px;font-weight:bold}
+.showcase{background:#f3f8ff}
+.showcase-grid,.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+.showcase-visual{padding:35px;background:linear-gradient(145deg,#e1efff,#f7fbff);border-radius:20px;text-align:center}
+.showcase-visual .symbol{font-size:75px;color:#075bff;font-weight:bold}
+.showcase-visual h3{color:#092754}
+.about-points{display:grid;gap:14px}
+.point{padding:18px;border:1px solid #e2ebf7;border-radius:13px;background:#fff}
+.point strong{color:#075bff}
+.point p{font-size:13px;color:#60718a;margin:4px 0 0}
+.why{background:#f6faff}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.feature{padding:15px}
+.feature .check{color:#075bff;font-size:27px;font-weight:bold}
+.feature p{font-size:13px;color:#60718a}
+.social-section{background:#fff}
+.social-store{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:35px;padding:35px;background:linear-gradient(120deg,#eaf5ff,#f4faff);border-radius:22px}
+.social-store h2{font-size:clamp(27px,4vw,36px);line-height:1.25;color:#092754}
+.social-store p{color:#60718a}
+.social-platforms{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.social-platforms span{background:#fff;border:1px solid #dceaff;border-radius:30px;padding:5px 10px;font-size:11px;font-weight:bold}
+.social-store-image{width:100%;max-width:450px;height:auto;display:block;margin:auto;border-radius:14px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.review-card{padding:24px;border:1px solid #e2ebf7;border-radius:15px}
+.review-card .stars{color:#f3aa00}
+.review-card p{color:#60718a;font-size:14px}
+.review-card h3{font-size:14px;color:#092754}
+.review-card small{color:#8491a3}
+.review-note{text-align:center;color:#8491a3;font-size:12px}
+.contact{background:#edf5ff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.contact-links{display:grid;gap:12px}
+.contact-link{display:block;background:#fff;border:1px solid #dfeafa;padding:17px;border-radius:12px;color:#092754;overflow-wrap:anywhere}
+.contact-link strong{display:block;color:#075bff;font-size:13px}
+.contact-link small{color:#60718a}
+footer{background:#071d3b;color:white;padding:45px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;padding-bottom:30px}
+footer h3{font-size:15px}
+footer p,footer a,footer .footer-text{display:block;color:#b9c9dc;font-size:13px;margin:7px 0;overflow-wrap:anywhere}
+footer a:hover{color:#fff}
+.copyright{border-top:1px solid #ffffff25;padding:17px 0;color:#b9c9dc;font-size:12px}
+@media(max-width:850px){
+ .nav-links{gap:12px}
+ .nav-links a{font-size:12px}
+ .hero-grid{gap:20px}
+ .services-grid{grid-template-columns:repeat(2,1fr)}
+ .features{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+ .container{width:90%}
+ nav{min-height:68px;flex-wrap:wrap}
+ .menu-btn{display:block}
+ .nav-links{display:none;order:3;width:100%;flex-direction:column;gap:0;padding-bottom:12px}
+ .nav-links.open{display:flex}
+ .nav-links a{display:block;padding:10px;border-top:1px solid #edf2f9;font-size:14px}
+ .hero{padding:48px 0}
+ .hero-grid,.showcase-grid,.about-grid,.social-store,.contact-grid{grid-template-columns:1fr}
+ .hero-grid{gap:25px}
+ h1{font-size:39px}
+ section{padding:55px 0}
+ .services-grid{grid-template-columns:1fr}
+ .features{grid-template-columns:1fr 1fr;gap:10px}
+ .social-store{padding:22px}
+ .social-image-wrap{order:-1}
+ .reviews-grid{grid-template-columns:1fr}
+ .footer-grid{grid-template-columns:1fr;gap:15px}
+ .showcase-visual{padding:20px}
+}
+</style>
 </head>
 
 <body>
-
-<header class="header">
-  <nav class="navbar">
-
-    <a href="#home" class="logo">
-      <span>Blizzy</span> Digitals
-    </a>
-
-    <button class="menu-btn" id="menuBtn">☰</button>
-
+<header>
+  <nav class="container">
+    <a href="#home" class="logo"><span>Blizzy</span> Digitals</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#social-store">Social Store</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-
   </nav>
 </header>
 
-
 <main>
-
-<!-- HERO -->
-
 <section class="hero" id="home">
-
-  <div class="hero-content">
-
-    <div class="badge">
-      ✦ DIGITAL SOLUTIONS FOR MODERN BUSINESSES
-    </div>
-
-    <h1>
-      Build Your Brand.<br>
-      <span>Grow Your Business.</span>
-    </h1>
-
-    <p>
-      Professional websites, domains, company emails, graphics,
-      logos and digital solutions designed to help your business
-      stand out online.
-    </p>
-
-    <div class="hero-buttons">
-
-      <a href="#contact" class="btn primary">
-        Get Started →
-      </a>
-
-      <a
-        href="https://wa.me/2349159605671?text=Hello%20Blizzy%20Digitals,%20I%20would%20like%20to%20make%20an%20inquiry%20about%20your%20services."
-        class="btn secondary"
-        target="_blank"
-        rel="noopener"
-      >
-        WhatsApp Us
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- SERVICES -->
-
-<section class="section" id="services">
-
-  <div class="section-heading">
-
-    <span>WHAT WE DO</span>
-
-    <h2>Our Professional Services</h2>
-
-    <p>
-      Everything you need to build a strong and professional
-      digital identity.
-    </p>
-
-  </div>
-
-
-  <div class="services-grid">
-
-    <article class="service-card">
-
-      <div class="service-icon">01</div>
-
-      <h3>Web Development</h3>
-
-      <p>
-        Modern, responsive and professional websites
-        created for businesses, brands and individuals.
-      </p>
-
-      <a href="#contact">Request Service →</a>
-
-    </article>
-
-
-    <article class="service-card">
-
-      <div class="service-icon">02</div>
-
-      <h3>Domain Services</h3>
-
-      <p>
-        Get the right domain for your business with
-        assistance for setup and management.
-      </p>
-
-      <a href="#contact">Request Service →</a>
-
-    </article>
-
-
-    <article class="service-card">
-
-      <div class="service-icon">03</div>
-
-      <h3>Company Email</h3>
-
-      <p>
-        Professional business email addresses using
-        your own company domain.
-      </p>
-
-      <a href="#contact">Request Service →</a>
-
-    </article>
-
-
-    <article class="service-card">
-
-      <div class="service-icon">04</div>
-
-      <h3>Graphic Design</h3>
-
-      <p>
-        Creative graphics designed to help your
-        business communicate professionally.
-      </p>
-
-      <a href="#contact">Request Service →</a>
-
-    </article>
-
-
-    <article class="service-card">
-
-      <div class="service-icon">05</div>
-
-      <h3>Logo Design</h3>
-
-      <p>
-        Unique and memorable logos created to give
-        your business a strong visual identity.
-      </p>
-
-      <a href="#contact">Request Service →</a>
-
-    </article>
-
-
-    <article class="service-card">
-
-      <div class="service-icon">06</div>
-
-      <h3>Digital Support</h3>
-
-      <p>
-        Practical assistance with digital setup,
-        online presence and technology-related needs.
-      </p>
-
-      <a href="#contact">Request Service →</a>
-
-    </article>
-
-  </div>
-
-</section>
-
-
-<!-- SHOWCASE -->
-
-<section class="section">
-
-  <div class="about-content">
-
+  <div class="container hero-grid">
     <div>
-
-      <span class="section-label">
-        DIGITAL CREATIVITY
-      </span>
-
-      <h2>
-        Your Business Deserves
-        a Powerful Digital Presence.
-      </h2>
-
-      <p>
-        From your first website to your professional
-        company email and brand identity, Blizzy Digitals
-        helps you create a digital presence that looks
-        modern and trustworthy.
-      </p>
-
-      <br>
-
-      <a href="#contact" class="btn primary">
-        Start Your Project →
-      </a>
-
+      <span class="eyebrow">DIGITAL SOLUTIONS FOR MODERN BUSINESSES</span>
+      <h1>Your One-Stop Digital <span>Solutions Provider</span></h1>
+      <p>We help individuals and businesses build a professional online presence with modern websites, domains, company emails and creative designs.</p>
+      <a class="btn" href="#contact">Get Started →</a>
+      <a class="btn light" href="#services">Explore Services</a>
     </div>
-
-
-    <div class="about-box">
-
-      <img
-        src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85"
-        alt="Digital business team working"
-        style="width:100%;border-radius:18px;display:block;"
-      >
-
+    <div class="hero-art">
+      <div class="big-b">B.</div>
+      <h2>Build Your Brand.<br>Grow Your Business.</h2>
+      <p>Professional digital solutions made for your next step.</p>
     </div>
-
   </div>
-
 </section>
 
-
-<!-- ABOUT -->
-
-<section class="section about" id="about">
-
-  <div class="about-content">
-
-    <div class="about-text">
-
-      <span class="section-label">
-        ABOUT BLIZZY DIGITALS
-      </span>
-
-      <h2>
-        We Turn Digital Ideas Into Reality.
-      </h2>
-
-      <p>
-        Blizzy Digitals is a digital services brand focused
-        on helping businesses and individuals establish a
-        professional presence online.
-      </p>
-
-      <p>
-        From websites and domains to company emails,
-        graphics and logos, we provide practical digital
-        solutions tailored to your needs.
-      </p>
-
-      <a href="#contact" class="btn primary">
-        Talk to Us
-      </a>
-
+<section id="services">
+  <div class="container">
+    <div class="section-heading">
+      <span class="kicker">WHAT WE DO</span>
+      <h2>Our Professional Services</h2>
+      <p>Everything you need to create a stronger digital identity.</p>
     </div>
+    <div class="services-grid">
+      <article class="service-card"><div class="service-icon">01</div><h3>Web Development</h3><p>Modern, responsive websites for businesses, brands and individuals.</p><a href="#contact">Request Service →</a></article>
+      <article class="service-card"><div class="service-icon">02</div><h3>Domain Services</h3><p>Help choosing, registering and managing your business domain.</p><a href="#contact">Request Service →</a></article>
+      <article class="service-card"><div class="service-icon">03</div><h3>Professional Email</h3><p>Company email setup using your own business domain.</p><a href="#contact">Request Service →</a></article>
+      <article class="service-card"><div class="service-icon">04</div><h3>Graphic Design</h3><p>Flyers, banners and creative graphics for your brand.</p><a href="#contact">Request Service →</a></article>
+      <article class="service-card"><div class="service-icon">05</div><h3>Logo Design</h3><p>Distinctive logo designs to help your brand stand out.</p><a href="#contact">Request Service →</a></article>
+      <article class="service-card"><div class="service-icon">06</div><h3>Digital Support</h3><p>Practical assistance with digital setup and online presence.</p><a href="#contact">Request Service →</a></article>
+    </div>
+  </div>
+</section>
 
+<section class="showcase">
+  <div class="container showcase-grid">
+    <div>
+      <span class="kicker">DIGITAL CREATIVITY</span>
+      <h2>Your Business Deserves a Powerful Digital Presence.</h2>
+      <p class="intro">From your first website to your professional email and brand identity, Blizzy Digitals helps you take the next step online.</p>
+      <a class="btn" href="#contact">Start Your Project →</a>
+    </div>
+    <div class="showcase-visual">
+      <div class="symbol">B.</div>
+      <h3>Ideas Made Digital</h3>
+      <p class="intro">Websites · Domains · Design · Business Email</p>
+    </div>
+  </div>
+</section>
 
-    <div class="about-box">
+<section id="about">
+  <div class="container about-grid">
+    <div>
+      <span class="kicker">ABOUT BLIZZY DIGITALS</span>
+      <h2>Practical Digital Support for Your Ideas.</h2>
+      <p class="intro">Blizzy Digitals helps businesses and individuals establish a professional online presence through useful digital services.</p>
+      <p class="intro">We bring website development, domain support, professional email and creative design together in one place.</p>
+      <a class="btn" href="#contact">Talk to Us</a>
+    </div>
+    <div class="about-points">
+      <div class="point"><strong>01 · Professional Solutions</strong><p>Useful services built around your business needs.</p></div>
+      <div class="point"><strong>02 · Creative Thinking</strong><p>Design choices that fit your brand and goals.</p></div>
+      <div class="point"><strong>03 · Direct Communication</strong><p>Contact us to discuss your project and requirements.</p></div>
+    </div>
+  </div>
+</section>
 
-      <div class="about-stat">
-        <strong>01</strong>
-        <span>Professional<br>Solutions</span>
+<section class="why">
+  <div class="container">
+    <div class="section-heading">
+      <span class="kicker">WHY BLIZZY DIGITALS</span>
+      <h2>Built Around Your Business</h2>
+      <p>Thoughtful design, practical solutions and clear communication.</p>
+    </div>
+    <div class="features">
+      <div class="feature"><div class="check">✓</div><h3>Professional</h3><p>Build a credible digital image for your business.</p></div>
+      <div class="feature"><div class="check">✓</div><h3>Creative</h3><p>Modern designs tailored to your brand.</p></div>
+      <div class="feature"><div class="check">✓</div><h3>Customer Focused</h3><p>Solutions based on the requirements you share.</p></div>
+      <div class="feature"><div class="check">✓</div><h3>Easy Communication</h3><p>Reach us directly by WhatsApp or email.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="social-section" id="social-store">
+  <div class="container social-store">
+    <div class="social-copy">
+      <span class="kicker">SOCIAL MEDIA ACCOUNTS</span>
+      <h2>Explore Our Social Media Store</h2>
+      <p>Looking for foreign or local social media accounts? Visit our store to view available options and details.</p>
+      <div class="social-platforms">
+        <span>WhatsApp</span><span>Instagram</span><span>Facebook</span><span>TikTok</span><span>Telegram</span>
       </div>
-
-      <div class="about-stat">
-        <strong>02</strong>
-        <span>Creative<br>Design</span>
-      </div>
-
-      <div class="about-stat">
-        <strong>03</strong>
-        <span>Reliable<br>Support</span>
-      </div>
-
+      <a class="btn" href="https://blizzystore992.base44.app" target="_blank" rel="noopener noreferrer">Shop Now →</a>
     </div>
-
+    <div class="social-image-wrap">
+      <img class="social-store-image" src="67a87616e079d52936d7220c3eddff8a.jpg" alt="Social media platforms" loading="lazy">
+    </div>
   </div>
-
 </section>
 
-
-<!-- WHY US -->
-
-<section class="section why-us">
-
-  <div class="section-heading">
-
-    <span>WHY BLIZZY DIGITALS</span>
-
-    <h2>Built Around Your Business</h2>
-
+<section id="reviews">
+  <div class="container">
+    <div class="section-heading">
+      <span class="kicker">CUSTOMER FEEDBACK</span>
+      <h2>What Our Customers Say</h2>
+      <p>Customer experiences can help others learn about our services.</p>
+    </div>
+    <div class="reviews-grid">
+      <article class="review-card"><div class="stars">★★★★★</div><p>Replace this text with a genuine review from a customer about their experience.</p><h3>Customer Review</h3><small>Verified customer feedback</small></article>
+      <article class="review-card"><div class="stars">★★★★★</div><p>Add a real customer's feedback about a website, domain or design project.</p><h3>Customer Review</h3><small>Verified customer feedback</small></article>
+      <article class="review-card"><div class="stars">★★★★★</div><p>Publish honest feedback from a customer who has used your service.</p><h3>Customer Review</h3><small>Verified customer feedback</small></article>
+    </div>
+    <p class="review-note">Replace these examples with genuine customer reviews before publishing.</p>
   </div>
-
-
-  <div class="features">
-
-    <div class="feature">
-      <div>✓</div>
-      <h3>Professional</h3>
-      <p>
-        We help create a professional digital image
-        for your business.
-      </p>
-    </div>
-
-
-    <div class="feature">
-      <div>✓</div>
-      <h3>Creative</h3>
-      <p>
-        Modern designs and digital solutions
-        tailored to your brand.
-      </p>
-    </div>
-
-
-    <div class="feature">
-      <div>✓</div>
-      <h3>Customer Focused</h3>
-      <p>
-        We listen to your needs and build solutions
-        around your requirements.
-      </p>
-    </div>
-
-
-    <div class="feature">
-      <div>✓</div>
-      <h3>Easy Communication</h3>
-      <p>
-        Contact us directly through WhatsApp or email
-        whenever you need assistance.
-      </p>
-    </div>
-
-  </div>
-
 </section>
 
-
-<!-- REVIEWS -->
-
-<section class="section reviews" id="reviews">
-
-  <div class="section-heading">
-
-    <span>CUSTOMER FEEDBACK</span>
-
-    <h2>What Our Customers Say</h2>
-
-  </div>
-
-
-  <div class="reviews-grid">
-
-    <article class="review-card">
-
-      <div class="stars">★★★★★</div>
-
-      <p>
-        "Blizzy Digitals helped me create a professional
-        online presence for my business. The process was
-        simple and everything looked great."
-      </p>
-
-      <h4>Amaka Johnson</h4>
-
-      <span>Business Owner</span>
-
-    </article>
-
-
-    <article class="review-card">
-
-      <div class="stars">★★★★★</div>
-
-      <p>
-        "I needed a professional company email and domain.
-        Blizzy Digitals made the setup easy and explained
-        everything clearly."
-      </p>
-
-      <h4>John Williams</h4>
-
-      <span>Entrepreneur</span>
-
-    </article>
-
-
-    <article class="review-card">
-
-      <div class="stars">★★★★★</div>
-
-      <p>
-        "The logo design was clean and exactly what I wanted.
-        I would definitely recommend their digital services."
-      </p>
-
-      <h4>James David</h4>
-
-      <span>Business Owner</span>
-
-    </article>
-
-  </div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="section contact" id="contact">
-
-  <div class="contact-container">
-
-    <div class="contact-text">
-
-      <span class="section-label">
-        GET IN TOUCH
-      </span>
-
-      <h2>
-        Have a Digital Project in Mind?
-      </h2>
-
-      <p>
-        Tell us what you need and let's discuss how
-        Blizzy Digitals can help your business.
-      </p>
-
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <span class="kicker">GET IN TOUCH</span>
+      <h2>Have a Digital Project in Mind?</h2>
+      <p class="intro">Tell us what you need and let's discuss how Blizzy Digitals can help your business.</p>
     </div>
-
-
-    <div class="contact-buttons">
-
-      <a
-        href="mailto:info@blizzydigitals.name.ng?subject=Blizzy%20Digitals%20Service%20Inquiry"
-        class="contact-btn email"
-      >
-
-        <span>✉</span>
-
-        <div>
-          <small>Email Us</small>
-          info@blizzydigitals.name.ng
-        </div>
-
+    <div class="contact-links">
+      <a class="contact-link" href="https://wa.me/2349159605671?text=Hello%20Blizzy%20Digitals%2C%20I%20would%20like%20to%20ask%20about%20your%20services." target="_blank" rel="noopener noreferrer">
+        <small>Chat with us on WhatsApp</small><strong>+234 915 960 5671</strong>
       </a>
-
-
-      <a
-        href="https://wa.me/2349159605671?text=Hello%20Blizzy%20Digitals,%20I%20would%20like%20to%20ask%20about%20your%20services."
-        class="contact-btn whatsapp"
-        target="_blank"
-        rel="noopener"
-      >
-
-        <span>◉</span>
-
-        <div>
-          <small>WhatsApp</small>
-          +234 915 960 5671
-        </div>
-
+      <a class="contact-link" href="mailto:info@blizzydigitals.name.ng?subject=Blizzy%20Digitals%20Service%20Inquiry">
+        <small>Email us</small><strong>info@blizzydigitals.name.ng</strong>
       </a>
-
     </div>
-
   </div>
-
 </section>
-
 </main>
 
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-  <div class="footer-content">
-
-    <div>
-
-      <a href="#home" class="logo">
-        <span>Blizzy</span> Digitals
-      </a>
-
-      <p>
-        Professional digital solutions for modern businesses.
-      </p>
-
-    </div>
-
-
-    <div class="footer-links">
-
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#contact">Contact</a>
-
-    </div>
-
+<footer>
+  <div class="container footer-grid">
+    <div><a href="#home" class="logo" style="color:white"><span>Blizzy</span> Digitals</a><p>Professional digital solutions for businesses and individuals.</p></div>
+    <div><h3>Quick Links</h3><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+    <div><h3>Contact</h3><a href="mailto:info@blizzydigitals.name.ng">info@blizzydigitals.name.ng</a><a href="https://wa.me/2349159605671" target="_blank" rel="noopener noreferrer">WhatsApp</a><span class="footer-text">Nigeria · Serving clients worldwide</span></div>
   </div>
-
-
-  <div class="copyright">
-
-    © <span id="year"></span>
-    Blizzy Digitals. All rights reserved.
-
-  </div>
-
+  <div class="container copyright">© <span id="year"></span> Blizzy Digitals. All rights reserved.</div>
 </footer>
 
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
 
-<script src="script.js"></script>
+menuBtn.addEventListener("click", function () {
+  const open = navLinks.classList.toggle("open");
+  menuBtn.textContent = open ? "×" : "☰";
+  menuBtn.setAttribute("aria-expanded", String(open));
+});
 
+navLinks.querySelectorAll("a").forEach(function(link) {
+  link.addEventListener("click", function() {
+    navLinks.classList.remove("open");
+    menuBtn.textContent = "☰";
+    menuBtn.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
-          </html>
-
-
-
-<section class="social-store">
-  <img
-    src="67a87616e079d52936d7220c3eddff8a.jpg"
-    alt="Social media platforms"
-    class="social-store-image"
-  >
-
-  <h2>Purchase Your Social Media Accounts Here</h2>
-  <p>Both Foreign and Local Accounts Available</p>
-
-  <a
-    href="https://blizzystore992.base44.app"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="social-store-button"
-  >
-    Shop Now
-  </a>
-</section>
-
-<style>
-.social-store {
-  text-align: center;
-  padding: 25px 15px;
-  margin: 20px auto;
-  max-width: 700px;
-}
-
-.social-store-image {
-  display: block;
-  width: 100%;
-  max-width: 550px;
-  height: auto;
-  margin: 0 auto 20px;
-  border-radius: 10px;
-}
-
-.social-store h2 {
-  font-size: 25px;
-  margin-bottom: 10px;
-}
-
-.social-store p {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-
-.social-store-button {
-  display: inline-block;
-  background: #1769ff;
-  color: white;
-  padding: 13px 28px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.social-store-button:hover {
-  background: #0b4dcc;
-}
-</style>
-
+</html>

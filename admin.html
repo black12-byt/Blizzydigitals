@@ -61,8 +61,9 @@ document.getElementById("forgot-password-button")
 
     try {
       const client = window.supabase.createClient(
-        window.BLIZZY_SUPABASE_URL,
-        window.BLIZZY_SUPABASE_PUBLISHABLE_KEY
+  "https://kshfedzwelpsfgkbmope.supabase.co",
+  window.BLIZZY_SUPABASE_PUBLISHABLE_KEY
+);
       );
 
       const { error } = await client.auth.resetPasswordForEmail(

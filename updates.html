@@ -1,1 +1,28 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Latest news, updates, and announcements from Blizzy Digitals.">
+  <title>Updates | Blizzy Digitals</title>
+  <link rel="stylesheet" href="updates-feature.css">
+</head>
+<body>
+  <main class="updates-container">
+    <h1>Blizzy Digitals</h1>
+    <h2>Latest Updates</h2>
+    <p>See our latest news, announcements, and work.</p>
+
+    <p id="updates-message" role="status">Loading updates...</p>
+    <section id="updates-list" aria-live="polite"></section>
+
+    <p><a href="index.html">Return to the homepage</a></p>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="public-updates.js"></script>
+</body>
+</html>
+

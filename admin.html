@@ -1,1 +1,54 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blizzy Digitals | Admin Updates</title>
+  <link rel="stylesheet" href="updates-feature.css">
+</head>
+<body>
+  <main class="updates-container">
+    <h1>Blizzy Digitals</h1>
+    <h2>Admin Updates</h2>
+    <p>Sign in to publish website updates.</p>
+
+    <section id="login-section">
+      <form id="login-form">
+        <label for="email">Admin email</label>
+        <input id="email" type="email" autocomplete="username" required>
+
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+
+        <button type="submit">Sign in</button>
+      </form>
+      <p id="login-message" role="status"></p>
+    </section>
+
+    <section id="admin-section" hidden>
+      <button id="sign-out" type="button">Sign out</button>
+      <h3>Publish a new update</h3>
+
+      <form id="update-form">
+        <label for="title">Update title</label>
+        <input id="title" type="text" maxlength="120" required>
+
+        <label for="description">Description</label>
+        <textarea id="description" rows="5" required></textarea>
+
+        <label for="image">Choose an image from your phone</label>
+        <input id="image" type="file" accept="image/jpeg,image/png,image/webp" required>
+
+        <button type="submit">Publish update</button>
+      </form>
+      <p id="upload-message" role="status"></p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin-updates.js"></script>
+</body>
+</html>
+

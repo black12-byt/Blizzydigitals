@@ -59,24 +59,27 @@ document.getElementById("forgot-password-button")
     const email = prompt("Enter your admin email address:");
     if (!email) return;
 
-    const client = window.supabase.createClient(
-      window.BLIZZY_SUPABASE_URL,
-      window.BLIZZY_SUPABASE_PUBLISHABLE_KEY
-    );
+    try {
+      const client = window.supabase.createClient(
+        window.BLIZZY_SUPABASE_URL,
+        window.BLIZZY_SUPABASE_PUBLISHABLE_KEY
+      );
 
-    const { error } = await client.auth.resetPasswordForEmail(
-      email.trim(),
-      {
-        redirectTo:
-          "https://blizzydigitals.name.ng/reset-password.html"
+      const { error } = await client.auth.resetPasswordForEmail(
+        email.trim(),
+        {
+          redirectTo:
+            "https://blizzydigitals.name.ng/reset-password.html"
+        }
+      );
+
+      if (error) {
+        alert("Recovery failed: " + error.message);
+      } else {
+        alert("Recovery request submitted. Check your inbox.");
       }
-    );
-
-    alert(error
-      ? "Recovery request failed: " + error.message
-      : "Recovery email requested. Check your inbox.");
+    } catch (err) {
+      alert("Error: " + (err.message || "Please try again."));
+    }
   });
 </script>
-</body>
-</html>
-

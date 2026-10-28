@@ -115,4 +115,35 @@
 
   refreshSession();
 })();
-  
+  // Blizzy Digitals password recovery
+const recoveryClient = window.supabase.createClient(
+  window.BLIZZY_SUPABASE_URL,
+  window.BLIZZY_SUPABASE_PUBLISHABLE_KEY
+);
+
+const recoveryButton = document.createElement("button");
+recoveryButton.type = "button";
+recoveryButton.textContent = "Forgot password?";
+recoveryButton.style.display = "block";
+recoveryButton.style.margin = "15px auto";
+document.body.appendChild(recoveryButton);
+
+recoveryButton.addEventListener("click", async function () {
+  const email = prompt("Enter your admin email address:");
+
+  if (!email) return;
+
+  const { error } = await recoveryClient.auth.resetPasswordForEmail(
+    email.trim(),
+    {
+      redirectTo:
+        "https://blizzydigitals.name.ng/reset-password.html"
+    }
+  );
+
+  if (error) {
+    alert("Recovery request failed: " + error.message);
+  } else {
+    alert("Recovery email requested. Check your inbox.");
+  }
+});
